@@ -65,6 +65,13 @@
     $numero1="Hola";
     echo "<br>El valor de \$numero1 es $numero1 y el tipo es: ".gettype($numero1);
 
+    //-------------------------------
+    $var="Soy una cadena";
+    $var2=true;
+    echo '<hr>';
+    var_dump($var);
+    echo '<br>';
+    var_dump($var2);
 
 
 
