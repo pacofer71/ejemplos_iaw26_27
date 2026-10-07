@@ -32,6 +32,9 @@ function hacerOperacion($num1, $num2, $operacion){
         return $num1*$num2;
     }
     if($operacion=='/'){
+        if($num2==0){
+            return "Error, no se puede dividir por '0' !!!!";
+        }
         return $num1/$num2;
     }
     return "<br><b>Error, operación <i><b>$operacion</i></b> NO soportada!!!!!!!</b>";
