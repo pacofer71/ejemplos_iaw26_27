@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['email'])){
+        header("Location: index.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +17,7 @@
 </head>
 
 <body class="bg-purple-300">
-    Estamos EN Sitio
+    <p>Te has logeado como: <?= $_SESSION['email'] ?></p>
+    <a href="cerrar.php">Salir</a>
 </body>
 </html>

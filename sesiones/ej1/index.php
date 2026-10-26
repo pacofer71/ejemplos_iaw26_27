@@ -1,4 +1,5 @@
 <?php
+session_start();
 // require, require_once, include, include_once
 require 'usuarios.php';
 
@@ -11,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     foreach ($usuariosValidos as $usuario) {
         if ($usuario[0] == $email && $usuario[1] == $password) {
             //Login Correcto
+            $_SESSION['email']=$email;
            header("Location:sitio.php");
             die();
         }
@@ -20,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     die();
     
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
