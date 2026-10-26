@@ -1,9 +1,14 @@
 <?php
-    session_start();
-    if($_SESSION['perfil']!=1){
-        header("Location:sitio.php");
-        exit;
-    }
+session_start();
+if (!isset($_SESSION['perfil'])) {
+    header("Location:sitio.php");
+    exit;
+}
+//si llegamos aqui es pq existe perfil
+if ($_SESSION['perfil'] != 1) {
+    header("Location:sitio.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +22,10 @@
 </head>
 
 <body class="bg-green-400 p-8">
-    <p>Te has logeado como: <?= $_SESSION['email'] ?></p>
+
     <div class="mt-4">
-    <a href="cerrar.php" class="p-2 text-white font-bold rounded-xl bg-red-600 hover:bg-red-800">Salir</a>
+        <a href="cerrar.php" class="p-2 text-white font-bold rounded-xl bg-red-600 hover:bg-red-800">Salir</a>
     </div>
 </body>
+
 </html>
